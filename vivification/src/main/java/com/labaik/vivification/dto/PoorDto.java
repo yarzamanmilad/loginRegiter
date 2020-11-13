@@ -17,7 +17,7 @@ public class PoorDto {
     private String lastName;
     private String nationality;
     private String phoneSubscriber;
-    private Gender gender;
+    private String gender;
     private int numberOfChildren;
     private int numberOfDisabledChildren;
     private  long creditCardNumber;
@@ -26,9 +26,13 @@ public class PoorDto {
 
     private String minimumWage;
 
-    private String requestedAmount;
+    private double requestedAmount;
 
     private String state;
     private String city;
     private String  addressDetails;
+
+    private String role;
+    private String email;
+    private String password;
 }

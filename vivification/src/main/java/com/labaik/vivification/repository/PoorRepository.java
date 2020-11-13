@@ -10,4 +10,6 @@ import java.util.Optional;
 @Repository
 public interface PoorRepository extends JpaRepository<Poor,Long> {
     Optional<Poor> findByFirstName(String name);
+    Poor findByNationality(String nationality);
+    Poor findByAccount_Email(String email);
 }

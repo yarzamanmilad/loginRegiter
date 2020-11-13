@@ -15,7 +15,7 @@ import java.util.List;
 
 @SpringBootApplication
 
-public class VivificationApplication implements CommandLineRunner {
+public class VivificationApplication {
     @Autowired
       private  PoorRepository poorRepository;
     @Autowired
@@ -24,25 +24,4 @@ public class VivificationApplication implements CommandLineRunner {
         SpringApplication.run(VivificationApplication.class, args);
     }
 
-    @Override
-    public void run(String... args) throws Exception {
-        Poor poor=new Poor();
-        poor.setFirstName("milad");
-        poorRepository.save(poor);
-      Poor poor1=   poorRepository.findByFirstName(poor.getFirstName()).orElseThrow(() -> new IllegalStateException());
-        //System.out.println(poors.get(0).getFirstName()+"/////////");
-        List<Poor> poorList=new ArrayList<>();
-        poorList.add(poor1);
-
-        Benefactor benefactor=new Benefactor()
-                .setFirstName("ahmad")
-                .setLastName("Yarzaman");
-              //  .setPoors(poorList);
-
-       // System.out.println(benefactorRepository.findAll().get(0).getPoors().get(0).getFirstName());
-
-                ;
-        benefactorRepository.save(benefactor);
-
-    }
 }

@@ -1,5 +1,6 @@
 package com.labaik.vivification.domain.user;
 
+import com.labaik.vivification.domain.Account;
 import com.labaik.vivification.domain.enums.Gender;
 import lombok.*;
 import lombok.experimental.Accessors;
@@ -11,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 
 @Accessors(chain = true)
-@RequiredArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "BENEFACTOR")
 public class Benefactor {
@@ -24,6 +25,12 @@ public class Benefactor {
     private String phoneSubscriber;
     @Enumerated(EnumType.STRING)
     private Gender gender;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Account account;
+
+
+
+
     /*@ManyToMany
     private List<Poor> poors;*/
 }

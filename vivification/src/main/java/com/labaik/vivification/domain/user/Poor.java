@@ -1,5 +1,6 @@
 package com.labaik.vivification.domain.user;
 
+import com.labaik.vivification.domain.Account;
 import com.labaik.vivification.domain.address.Address;
 import com.labaik.vivification.domain.enums.*;
 import lombok.*;
@@ -30,8 +31,8 @@ public class Poor  {
     private MaritalStatus maritalStatus;
     @Enumerated(EnumType.STRING)
     private MinimumWage minimumWage;
-    @Enumerated(EnumType.STRING)
-    private RequestedAmount requestedAmount;
+
+    private double requestedAmount;
     @Enumerated(EnumType.STRING)
     private Gender gender;
     @Enumerated(EnumType.STRING)
@@ -41,5 +42,8 @@ public class Poor  {
     private String addressDetails;
     @Enumerated(EnumType.STRING)
     private AuthenticationStatus authenticationStatus;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Account account;
 
 }
